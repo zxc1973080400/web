@@ -1,0 +1,583 @@
+/* 全站基础样式：采用暖金色调，整体呈现现代简约风 */
+:root {
+  --gold-100: #f8f1df;
+  --gold-200: #eedca3;
+  --gold-300: #dcbf6a;
+  --gold-400: #c89d3c;
+  --gold-500: #a8741a;
+  --ink-900: #1f1a17;
+  --ink-700: #52453a;
+  --ink-500: #76675c;
+  --white: #ffffff;
+  --shadow-soft: 0 18px 36px rgba(29, 23, 15, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", "Noto Serif SC", sans-serif;
+  color: var(--ink-900);
+  background: linear-gradient(180deg, #fffaf0 0%, #f7f1e5 100%);
+}
+
+a {
+  text-decoration: none;
+}
+
+img,
+video {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  width: min(1200px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+/* 页头样式 */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(34, 24, 16, 0.68);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 90px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.brand-logo {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--gold-200), var(--gold-500));
+  color: var(--white);
+  font-family: "Noto Serif SC", serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  box-shadow: 0 12px 24px rgba(168, 116, 26, 0.3);
+}
+
+.brand-logo.small {
+  width: 40px;
+  height: 40px;
+  font-size: 1.4rem;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.brand-subtitle {
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.brand-text h1 {
+  margin: 0;
+  font-family: "Noto Serif SC", serif;
+  font-size: clamp(1.5rem, 2vw, 2.2rem);
+  font-weight: 700;
+  color: var(--white);
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.main-nav a {
+  position: relative;
+  padding: 12px 18px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.98rem;
+  transition: color 0.25s ease;
+}
+
+.main-nav a::after {
+  content: "";
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  bottom: 8px;
+  height: 2px;
+  background: var(--gold-200);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.25s ease;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+  color: var(--white);
+}
+
+.main-nav a:hover::after,
+.main-nav a.active::after {
+  transform: scaleX(1);
+}
+
+/* 轮播图样式 */
+.hero {
+  position: relative;
+  overflow: hidden;
+  background: #1a110b;
+}
+
+.slider {
+  position: relative;
+  height: 720px;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.8s ease, visibility 0.8s ease;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.slide.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.slide:nth-child(1) {
+  background-image: linear-gradient(90deg, rgba(17, 12, 9, 0.72), rgba(17, 12, 9, 0.25)),
+    url("https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1600&q=80");
+}
+
+.slide:nth-child(2) {
+  background-image: linear-gradient(90deg, rgba(17, 12, 9, 0.72), rgba(17, 12, 9, 0.25)),
+    url("https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=1600&q=80");
+}
+
+.slide:nth-child(3) {
+  background-image: linear-gradient(90deg, rgba(17, 12, 9, 0.72), rgba(17, 12, 9, 0.25)),
+    url("https://images.unsplash.com/photo-1505761671935-60b3a7427bad?auto=format&fit=crop&w=1600&q=80");
+}
+
+.slide-content {
+  width: min(580px, calc(100% - 80px));
+  margin-left: max(24px, calc((100vw - 1200px) / 2 + 64px));
+  color: var(--white);
+}
+
+.eyebrow {
+  margin: 0 0 18px;
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-200);
+}
+
+.slide-content h2 {
+  margin: 0;
+  font-family: "Noto Serif SC", serif;
+  font-size: clamp(2.5rem, 5vw, 4.4rem);
+  line-height: 1.08;
+  letter-spacing: 0.04em;
+}
+
+.slide-content p {
+  margin: 20px 0 0;
+  max-width: 510px;
+  font-size: 1.04rem;
+  line-height: 1.9;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.cta-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 30px;
+}
+
+.primary-btn,
+.secondary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 150px;
+  height: 52px;
+  border-radius: 999px;
+  font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.primary-btn {
+  background: linear-gradient(135deg, var(--gold-200), var(--gold-500));
+  color: var(--white);
+  box-shadow: 0 12px 28px rgba(168, 116, 26, 0.32);
+}
+
+.secondary-btn {
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  color: var(--white);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.primary-btn:hover,
+.secondary-btn:hover {
+  transform: translateY(-2px);
+}
+
+.slider-controls {
+  position: absolute;
+  left: 50%;
+  bottom: 32px;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: min(1200px, calc(100% - 48px));
+  z-index: 5;
+}
+
+.slider-btn {
+  width: 52px;
+  height: 52px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--white);
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.slider-dots {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dot {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.dot.active {
+  width: 36px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--gold-200), var(--gold-500));
+}
+
+/* 视频与文案区域 */
+.video-section {
+  padding: 96px 0 80px;
+}
+
+.section-heading {
+  margin-bottom: 28px;
+  text-align: center;
+}
+
+.label {
+  margin: 0 0 10px;
+  font-size: 0.74rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold-500);
+}
+
+.section-heading h3 {
+  margin: 0;
+  font-family: "Noto Serif SC", serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--ink-900);
+}
+
+.video-card {
+  overflow: hidden;
+  border-radius: 28px;
+  box-shadow: var(--shadow-soft);
+  background: #000;
+}
+
+.video-card video {
+  width: 100%;
+  height: 560px;
+  object-fit: cover;
+}
+
+.intro-copy {
+  max-width: 980px;
+  margin: 34px auto 0;
+  padding: 28px 32px;
+  background: rgba(255, 255, 255, 0.58);
+  border: 1px solid rgba(200, 157, 60, 0.2);
+  border-radius: 22px;
+  box-shadow: 0 12px 30px rgba(69, 50, 32, 0.05);
+}
+
+.intro-copy p {
+  margin: 0;
+  font-size: 1.06rem;
+  line-height: 2.1;
+  color: var(--ink-700);
+  text-indent: 2em;
+}
+
+/* 热门推荐模块 */
+.highlights-section {
+  padding: 0 0 96px;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+  margin-top: 34px;
+}
+
+.feature-card {
+  position: relative;
+  overflow: hidden;
+  min-height: 360px;
+  padding: 28px 24px 24px;
+  border-radius: 26px;
+  background-size: cover;
+  background-position: center;
+  box-shadow: var(--shadow-soft);
+  color: var(--white);
+}
+
+.feature-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(18, 12, 9, 0.12), rgba(18, 12, 9, 0.7));
+}
+
+.feature-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.card-food {
+  background-image: url("https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=900&q=80");
+}
+
+.card-sight {
+  background-image: url("https://images.unsplash.com/photo-1521295121783-8a321d551ad2?auto=format&fit=crop&w=900&q=80");
+}
+
+.card-culture {
+  background-image: url("https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=900&q=80");
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 110px;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 12px;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.number {
+  font-family: "Noto Serif SC", serif;
+  font-size: 2rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.feature-card h4 {
+  margin: 0 0 14px;
+  font-family: "Noto Serif SC", serif;
+  font-size: clamp(1.7rem, 2vw, 2.2rem);
+}
+
+.feature-card p {
+  margin: 0 0 18px;
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.9;
+}
+
+.feature-card a {
+  display: inline-flex;
+  align-items: center;
+  color: var(--gold-100);
+  font-weight: 600;
+}
+
+.feature-card a::after {
+  content: "→";
+  margin-left: 8px;
+}
+
+/* 页脚样式 */
+.site-footer {
+  background: linear-gradient(180deg, #1f1712, #120d09);
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 38px 0;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.footer-brand h4 {
+  margin: 0 0 6px;
+  font-family: "Noto Serif SC", serif;
+  font-size: 1.45rem;
+  color: var(--white);
+}
+
+.footer-brand p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.footer-links a,
+.footer-meta p {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-meta {
+  text-align: right;
+}
+
+.footer-meta p {
+  margin: 0;
+  line-height: 1.8;
+}
+
+/* 响应式布局 */
+@media (max-width: 860px) {
+  .header-inner {
+    flex-direction: column;
+    justify-content: center;
+    min-height: 120px;
+    padding: 16px 0;
+  }
+
+  .main-nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .slider {
+    height: 620px;
+  }
+
+  .slide-content {
+    margin-left: 32px;
+    width: min(470px, calc(100% - 48px));
+  }
+
+  .video-card video {
+    height: 420px;
+  }
+
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-meta {
+    text-align: center;
+  }
+}
+
+@media (max-width: 560px) {
+  .slider {
+    height: 520px;
+  }
+
+  .slide-content h2 {
+    font-size: 2.2rem;
+  }
+
+  .brand-subtitle {
+    letter-spacing: 0.12em;
+  }
+
+  .main-nav {
+    gap: 4px;
+  }
+
+  .main-nav a {
+    padding: 8px 12px;
+    font-size: 0.86rem;
+  }
+
+  .cta-group {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .primary-btn,
+  .secondary-btn {
+    width: 100%;
+  }
+
+  .video-card video {
+    height: 320px;
+  }
+}

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>蜀韵·成都</title>
+    <meta
+      name="description"
+      content="成都文化旅游宣传网站首页，展示成都的美食、景点、文化和旅游攻略。"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Serif+SC:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- 网站顶部：包含品牌区与导航区 -->
+    <header class="site-header">
+      <div class="container header-inner">
+        <!-- 品牌标识：logo 与标题 -->
+        <div class="brand" aria-label="成都文化旅游品牌">
+          <div class="brand-logo" aria-hidden="true">成</div>
+          <div class="brand-text">
+            <span class="brand-subtitle">成都文化旅游</span>
+            <h1>蜀韵·成都</h1>
+          </div>
+        </div>
+
+        <!-- 主导航：设置首页高亮 -->
+        <nav class="main-nav" aria-label="主导航">
+          <a class="active" href="#">首页</a>
+          <a href="#">美食</a>
+          <a href="#">景点</a>
+          <a href="#">文化</a>
+          <a href="#">攻略</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- Banner 区：采用轮播图形式，至少三张图 -->
+      <section class="hero" aria-label="成都旅游轮播图">
+        <div class="slider">
+          <article class="slide active" aria-label="轮播图 1">
+            <div class="slide-content">
+              <p class="eyebrow">慢生活 · 成都</p>
+              <h2>一座有温度的城市，等你细细品味</h2>
+              <p>
+                茶香四溢、街巷悠长、灯火温柔，成都在岁月里沉淀出属于自己的城市灵魂。
+              </p>
+              <div class="cta-group">
+                <a href="#" class="primary-btn">立即出发</a>
+                <a href="#" class="secondary-btn">探索更多</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="slide" aria-label="轮播图 2">
+            <div class="slide-content">
+              <p class="eyebrow">川蜀风韵</p>
+              <h2>遛娃漫步，遇见活力与烟火</h2>
+              <p>
+                从宽窄巷子到春熙路，从锦里古街到天府之国的现代创新，成都处处充满惊喜。
+              </p>
+              <div class="cta-group">
+                <a href="#" class="primary-btn">查看路线</a>
+                <a href="#" class="secondary-btn">城市印记</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="slide" aria-label="轮播图 3">
+            <div class="slide-content">
+              <p class="eyebrow">美食城市</p>
+              <h2>一口串串香，半城故事在夜色里发光</h2>
+              <p>
+                宽窄巷子灯火、火锅热气、甜点细腻，成都的味道，让每一天都想再多停留一会儿。
+              </p>
+              <div class="cta-group">
+                <a href="#" class="primary-btn">品味成都</a>
+                <a href="#" class="secondary-btn">夜游推荐</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="slider-controls container">
+          <button class="slider-btn prev" type="button" aria-label="上一张">‹</button>
+          <div class="slider-dots" aria-label="轮播指示器">
+            <span class="dot active" data-index="0"></span>
+            <span class="dot" data-index="1"></span>
+            <span class="dot" data-index="2"></span>
+          </div>
+          <button class="slider-btn next" type="button" aria-label="下一张">›</button>
+        </div>
+      </section>
+
+      <!-- 视频展示区 -->
+      <section class="video-section container" aria-label="成都宣传视频">
+        <div class="section-heading">
+          <p class="label">城市印象</p>
+          <h3>看见成都的烟火与诗意</h3>
+        </div>
+
+        <div class="video-card">
+          <video controls preload="metadata" poster="https://images.unsplash.com/photo-1514565131-fce0801e5785?auto=format&fit=crop&w=1200&q=80">
+            <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4" />
+            您的浏览器不支持 video 标签。
+          </video>
+        </div>
+
+        <!-- 成都介绍文案：约 300 字 -->
+        <div class="intro-copy">
+          <p>
+            成都，这座拥有千年文明与现代活力并存的城市，坐落在天府之国的核心地带，既有“天府之国”的厚重底蕴，也有“慢生活”的城市温度。这里的山水与人文相互映照，古老的街巷、精致的茶馆、饱满的美食文化与蓬勃的创新生态共同构成了独特的城市魅力。成都是一座适合慢游、细品和长住的城市，宽窄巷子里的木门、锦里夜市的灯火、春熙路的繁华与熊猫基地的温柔生机，都让人感受到这座城市无比亲切与有爱。无论是追寻历史记忆，还是享受当代时尚，成都都能以一种自在、包容与丰富的姿态欢迎每一位旅人。
+          </p>
+        </div>
+      </section>
+
+      <!-- 补充版块：热门推荐与城市亮点 -->
+      <section class="highlights-section" aria-label="成都热门推荐">
+        <div class="container">
+          <div class="section-heading">
+            <p class="label">热门推荐</p>
+            <h3>在成都，遇见每一种被热爱的小确幸</h3>
+          </div>
+
+          <div class="feature-grid">
+            <article class="feature-card card-food">
+              <div class="card-top">
+                <span class="tag">CITY FLAVOR</span>
+                <span class="number">01</span>
+              </div>
+              <h4>舌尖上的成都</h4>
+              <p>
+                从香喷喷的火锅到细腻的甜点，成都的美食以“麻、鲜、香、鲜”闻名，耐人寻味。
+              </p>
+              <a href="#">查看美食地图</a>
+            </article>
+
+            <article class="feature-card card-sight">
+              <div class="card-top">
+                <span class="tag">CITY SIGHT</span>
+                <span class="number">02</span>
+              </div>
+              <h4>城市里的诗意景观</h4>
+              <p>
+                宽窄巷子、锦里古街、杜甫草堂与熊猫基地，串联起成都独特的城市气质与自然景致。
+              </p>
+              <a href="#">探索热门景点</a>
+            </article>
+
+            <article class="feature-card card-culture">
+              <div class="card-top">
+                <span class="tag">CULTURE</span>
+                <span class="number">03</span>
+              </div>
+              <h4>慢游的文化体验</h4>
+              <p>
+                茶馆里的温柔时光、古老川剧的韵味与现代创意街区，见证成都温暖包容的城市文化。
+              </p>
+              <a href="#">了解文旅故事</a>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- 页脚区域 -->
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div class="footer-brand">
+          <div class="brand-logo small">成</div>
+          <div>
+            <h4>蜀韵·成都</h4>
+            <p>用文化与风景，书写一座城市的故事</p>
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <a href="#">关于我们</a>
+          <a href="#">旅游资讯</a>
+          <a href="#">联系我们</a>
+          <a href="#">隐私政策</a>
+        </div>
+
+        <div class="footer-meta">
+          <p>成都文化旅游官网</p>
+          <p>© 2026 蜀韵·成都</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
